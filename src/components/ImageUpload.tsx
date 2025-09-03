@@ -140,9 +140,8 @@ export const ImageUpload = ({ onImageSelect, isAnalyzing }: ImageUploadProps) =>
             Choose File
           </Button>
           <Button 
-            variant="capture" 
             onClick={startCamera}
-            className="gap-2"
+            className="gap-2 bg-accent text-white hover:bg-accent/90 shadow-soft"
           >
             <Camera className="w-4 h-4" />
             Use Camera
