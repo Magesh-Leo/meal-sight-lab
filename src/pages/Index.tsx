@@ -32,8 +32,8 @@ const Index = () => {
       const data = await response.json();
       
       // Extract the nutrition data from the webhook response
-      if (data && data.length > 0 && data[0].output && data[0].output.status === 'success') {
-        setNutritionData(data[0].output);
+      if (data && data.output && data.output.status === 'success') {
+        setNutritionData(data.output);
       } else {
         throw new Error('Invalid response format');
       }
