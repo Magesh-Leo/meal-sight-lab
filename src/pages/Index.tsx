@@ -15,29 +15,38 @@ const Index = () => {
     setIsAnalyzing(true);
     
     try {
-      // Simulate API call with realistic delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Create FormData to send the image
+      const formData = new FormData();
+      formData.append('image', file);
       
-      // Mock nutrition data - in production this would come from your API
-      const mockData = {
-        calories: Math.floor(Math.random() * 400) + 300,
-        protein: Math.floor(Math.random() * 30) + 15,
-        carbs: Math.floor(Math.random() * 50) + 25,
-        fat: Math.floor(Math.random() * 20) + 10,
-        fiber: Math.floor(Math.random() * 8) + 3,
-        sugar: Math.floor(Math.random() * 15) + 5,
-      };
+      // Send to webhook
+      const response = await fetch('https://magesh-srinivasan.app.n8n.cloud/webhook-test/meal-ai', {
+        method: 'POST',
+        body: formData,
+      });
       
-      setNutritionData(mockData);
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      // Extract the nutrition data from the webhook response
+      if (data && data.length > 0 && data[0].output && data[0].output.status === 'success') {
+        setNutritionData(data[0].output);
+      } else {
+        throw new Error('Invalid response format');
+      }
       
       toast({
         title: "Analysis Complete!",
         description: "Your meal nutrition has been analyzed successfully.",
       });
     } catch (error) {
+      console.error('Analysis error:', error);
       toast({
         title: "Analysis Failed",
-        description: "There was an error analyzing your image. Please try again.",
+        description: error instanceof Error ? error.message : "There was an error analyzing your image. Please try again.",
         variant: "destructive",
       });
     } finally {
