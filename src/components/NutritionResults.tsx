@@ -46,7 +46,7 @@ export const NutritionResults = ({ data, confidence = 95 }: NutritionResultsProp
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-muted-foreground">{label}</span>
-          <span className="text-xs text-muted-foreground">{percentage}%</span>
+          <span className="text-xs text-muted-foreground ml-2">{percentage.toFixed(2)}%</span>
         </div>
         
         <div className="space-y-2">
