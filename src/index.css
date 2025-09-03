@@ -44,12 +44,17 @@
 
     /* Custom design tokens */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(145 80% 42%) 0%, hsl(200 80% 50%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(120 30% 98% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(145 60% 25%) 0%, hsl(200 60% 30%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.95), hsl(120 30% 98% / 0.9));
     --shadow-soft: 0 4px 20px hsl(145 80% 42% / 0.15);
     --shadow-card: 0 8px 25px hsl(150 25% 15% / 0.08);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Text contrast improvements */
+    --text-hero-primary: 0 0% 100%;
+    --text-hero-secondary: 0 0% 95%;
+    --text-hero-accent: 145 85% 85%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,10 +105,15 @@
 
     /* Dark mode gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(145 80% 55%) 0%, hsl(200 70% 60%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(150 20% 15% / 0.8), hsl(150 15% 18% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(145 70% 20%) 0%, hsl(200 60% 25%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(150 20% 15% / 0.95), hsl(150 15% 18% / 0.9));
     --shadow-soft: 0 4px 20px hsl(145 80% 55% / 0.2);
     --shadow-card: 0 8px 25px hsl(0 0% 0% / 0.3);
+    
+    /* Dark mode text improvements */
+    --text-hero-primary: 0 0% 100%;
+    --text-hero-secondary: 0 0% 90%;
+    --text-hero-accent: 145 85% 85%;
   }
 }
 

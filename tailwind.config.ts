@@ -69,6 +69,11 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)'
 			},
+			colors: {
+				'hero-primary': 'hsl(var(--text-hero-primary))',
+				'hero-secondary': 'hsl(var(--text-hero-secondary))',
+				'hero-accent': 'hsl(var(--text-hero-accent))'
+			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
 				'card': 'var(--shadow-card)'

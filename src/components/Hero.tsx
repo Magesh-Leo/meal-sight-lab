@@ -10,27 +10,27 @@ interface HeroProps {
 export const Hero = ({ onCaptureClick, onUploadClick }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-95" />
+      {/* Background with improved contrast */}
+      <div className="absolute inset-0 bg-gradient-hero" />
       
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className="space-y-8 text-left lg:text-left">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                <span className="block">Snap.</span>
-                <span className="block">Analyze.</span>
-                <span className="block text-primary-glow">Optimize.</span>
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <span className="block text-hero-primary">Snap.</span>
+                <span className="block text-hero-primary">Analyze.</span>
+                <span className="block text-hero-accent font-bold">Optimize.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-2xl">
+              <p className="text-xl md:text-2xl text-hero-secondary max-w-2xl font-medium">
                 Get instant AI-powered nutrition analysis from any meal photo. 
                 Know your macros in seconds, not minutes.
               </p>
             </div>
             
-            {/* Action buttons */}
+            {/* Action buttons with clear hierarchy */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 variant="hero" 
@@ -52,12 +52,14 @@ export const Hero = ({ onCaptureClick, onUploadClick }: HeroProps) => {
               </Button>
             </div>
             
-            {/* Feature highlight */}
-            <div className="flex items-center gap-3 text-white/80">
-              <div className="flex items-center justify-center w-8 h-8 bg-primary-glow/20 rounded-full">
-                <Zap className="w-4 h-4 text-primary-glow" />
+            {/* Feature highlight - improved visibility */}
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center w-10 h-10 bg-hero-accent/20 rounded-full border border-hero-accent/30">
+                <Zap className="w-5 h-5 text-hero-accent" />
               </div>
-              <span className="text-sm font-medium">Instant AI analysis • 95% accuracy • Works offline</span>
+              <span className="text-base font-semibold text-hero-secondary">
+                Instant AI analysis • 95% accuracy • Works offline
+              </span>
             </div>
           </div>
           
